@@ -63,14 +63,9 @@ models/*.onnx
 !models/.gitkeep
 
 # =============================================================================
-# Reports — figures are regenerated, but keep CSV
+# Report assets
 # =============================================================================
-reports/figures/*.png
-reports/figures/*.jpg
-reports/figures/*.svg
-reports/figures/*.pdf
-!reports/figures/.gitkeep
-# ablation_table.csv must be committed — do NOT add it here
+!report/images/.gitkeep
 
 # =============================================================================
 # OS

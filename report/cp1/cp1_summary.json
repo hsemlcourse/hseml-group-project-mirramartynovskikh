@@ -1,0 +1,77 @@
+{
+  "rows": 261894,
+  "columns": 44,
+  "target": "price",
+  "target_mean": 207.079780369157,
+  "target_median": 136.0,
+  "target_q95": 680.3499999999767,
+  "target_q99": 950.0,
+  "missing_top_10": {
+    "number_of_reviews_ly": 53.33,
+    "estimated_occupancy_l365d": 53.33,
+    "estimated_revenue_l365d": 53.33,
+    "review_scores_checkin": 19.46,
+    "review_scores_value": 19.46,
+    "review_scores_location": 19.46,
+    "review_scores_communication": 19.46,
+    "review_scores_cleanliness": 19.46,
+    "review_scores_accuracy": 19.46,
+    "review_scores_rating": 19.46
+  },
+  "zero_price_rows": 1,
+  "price_eq_1000_rows": 1183,
+  "excluded_leakage_features": [
+    "estimated_revenue_l365d"
+  ],
+  "excluded_post_publication_features_for_final_model": [
+    "estimated_occupancy_l365d",
+    "number_of_reviews",
+    "number_of_reviews_ltm",
+    "number_of_reviews_l30d",
+    "number_of_reviews_ly",
+    "reviews_per_month",
+    "review_scores_rating",
+    "review_scores_accuracy",
+    "review_scores_cleanliness",
+    "review_scores_checkin",
+    "review_scores_communication",
+    "review_scores_location",
+    "review_scores_value"
+  ],
+  "validation_results": [
+    {
+      "model_name": "hist_gradient_boosting",
+      "split": "validation",
+      "mae": 66.97943549968126,
+      "rmse": 116.88135562286757,
+      "r2": 0.6486044861236634
+    },
+    {
+      "model_name": "random_forest_50k",
+      "split": "validation",
+      "mae": 68.03121326832327,
+      "rmse": 119.20022241230565,
+      "r2": 0.6345231575371958
+    },
+    {
+      "model_name": "ridge_ohe",
+      "split": "validation",
+      "mae": 73.63722477567082,
+      "rmse": 320.32239647443777,
+      "r2": -1.639248859814567
+    },
+    {
+      "model_name": "dummy_median",
+      "split": "validation",
+      "mae": 125.0956878118318,
+      "rmse": 209.6582096805841,
+      "r2": -0.13065336227975033
+    }
+  ],
+  "final_test_result": {
+    "model_name": "hist_gradient_boosting",
+    "mae": 65.987,
+    "rmse": 113.762,
+    "r2": 0.66
+  }
+}

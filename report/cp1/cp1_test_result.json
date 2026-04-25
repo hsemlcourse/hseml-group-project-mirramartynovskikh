@@ -1,0 +1,6 @@
+{
+  "model_name": "hist_gradient_boosting",
+  "mae": 65.987,
+  "rmse": 113.762,
+  "r2": 0.66
+}

@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint:
-    name: Ruff Linting
+    name: Lint and tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,8 +19,11 @@ jobs:
           python-version: "3.10"
           cache: "pip"
 
-      - name: Install ruff
-        run: pip install ruff
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Run ruff on src/
-        run: ruff check src/ --line-length 120
+      - name: Run ruff
+        run: ruff check src/ tests/ --line-length 120
+
+      - name: Run tests
+        run: pytest -q
